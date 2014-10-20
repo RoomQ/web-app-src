@@ -20,7 +20,7 @@ Route::get('/', function()
 
 Route::get('test', function()
 {
-	$name='Kyriakos Me Too';
+	$name='Kyriakos Too';
     return View::make('test')->with('my_name',$name);
 });
 
