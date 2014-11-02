@@ -32,6 +32,11 @@ Route::get('admin', function()
     return View::make('adminPage');
 });
 
+Route::get('phpinfo', function()
+{
+    phpinfo();
+});
+
 // route to show the login form
 Route::get('login', array('uses' => 'LoginController@showLogin'));
 
