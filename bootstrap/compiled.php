@@ -476,7 +476,7 @@ class Application extends Container implements HttpKernelInterface, TerminableIn
     }
     public static function getBootstrapFile()
     {
-        return '/usr/local/nginx/www/laravel-local/vendor/laravel/framework/src/Illuminate/Foundation' . '/start.php';
+        return '/home/costas/projects/laravel/vendor/laravel/framework/src/Illuminate/Foundation' . '/start.php';
     }
     public function startExceptionHandling()
     {
@@ -2896,7 +2896,7 @@ class ExceptionHandler
     }
     private function decorate($content, $css)
     {
-        return "<!DOCTYPE html>\n<html>\n    <head>\n        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"/>\n        <meta name=\"robots\" content=\"noindex,nofollow\" />\n        <style>\n            /* Copyright (c) 2010, Yahoo! Inc. All rights reserved. Code licensed under the BSD License: http://developer.yahoo.com/yui/license.html */\n            html{color:#000;background:#FFF;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0;}table{border-collapse:collapse;border-spacing:0;}fieldset,img{border:0;}address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal;}li{list-style:none;}caption,th{text-align:left;}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}q:before,q:after{content:'';}abbr,acronym{border:0;font-variant:normal;}sup{vertical-align:text-top;}sub{vertical-align:text-bottom;}input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit;}input,textarea,select{*font-size:100%;}legend{color:#000;}\n\n            html { background: #eee; padding: 10px }\n            img { border: 0; }\n            #sf-resetcontent { width:970px; margin:0 auto; }\n            {$css}\n        </style>\n    </head>\n    <body>\n        {$content}\n    </body>\n</html>";
+        return "<!DOCTYPE html>\n<html>\n    <head>\n        <meta charset=\"UTF-8\" />\n        <meta name=\"robots\" content=\"noindex,nofollow\" />\n        <style>\n            /* Copyright (c) 2010, Yahoo! Inc. All rights reserved. Code licensed under the BSD License: http://developer.yahoo.com/yui/license.html */\n            html{color:#000;background:#FFF;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0;}table{border-collapse:collapse;border-spacing:0;}fieldset,img{border:0;}address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal;}li{list-style:none;}caption,th{text-align:left;}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}q:before,q:after{content:'';}abbr,acronym{border:0;font-variant:normal;}sup{vertical-align:text-top;}sub{vertical-align:text-bottom;}input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit;}input,textarea,select{*font-size:100%;}legend{color:#000;}\n\n            html { background: #eee; padding: 10px }\n            img { border: 0; }\n            #sf-resetcontent { width:970px; margin:0 auto; }\n            {$css}\n        </style>\n    </head>\n    <body>\n        {$content}\n    </body>\n</html>";
     }
     private function abbrClass($class)
     {
@@ -10619,13 +10619,13 @@ class Cookie
 }
 namespace Whoops;
 
-use Whoops\Handler\HandlerInterface;
-use Whoops\Handler\Handler;
-use Whoops\Handler\CallbackHandler;
-use Whoops\Exception\Inspector;
-use Whoops\Exception\ErrorException;
-use InvalidArgumentException;
 use Exception;
+use InvalidArgumentException;
+use Whoops\Exception\ErrorException;
+use Whoops\Exception\Inspector;
+use Whoops\Handler\CallbackHandler;
+use Whoops\Handler\Handler;
+use Whoops\Handler\HandlerInterface;
 class Run
 {
     const EXCEPTION_HANDLER = 'handleException';
@@ -10796,14 +10796,20 @@ class Run
     }
     private static function isLevelFatal($level)
     {
-        return in_array($level, array(E_ERROR, E_PARSE, E_CORE_ERROR, E_CORE_WARNING, E_COMPILE_ERROR, E_COMPILE_WARNING));
+        $errors = E_ERROR;
+        $errors |= E_PARSE;
+        $errors |= E_CORE_ERROR;
+        $errors |= E_CORE_WARNING;
+        $errors |= E_COMPILE_ERROR;
+        $errors |= E_COMPILE_WARNING;
+        return ($level & $errors) > 0;
     }
 }
 namespace Whoops\Handler;
 
+use Exception;
 use Whoops\Exception\Inspector;
 use Whoops\Run;
-use Exception;
 interface HandlerInterface
 {
     public function handle();
@@ -10813,10 +10819,9 @@ interface HandlerInterface
 }
 namespace Whoops\Handler;
 
-use Whoops\Handler\HandlerInterface;
+use Exception;
 use Whoops\Exception\Inspector;
 use Whoops\Run;
-use Exception;
 abstract class Handler implements HandlerInterface
 {
     const DONE = 16;
@@ -10852,7 +10857,6 @@ abstract class Handler implements HandlerInterface
 }
 namespace Whoops\Handler;
 
-use Whoops\Handler\Handler;
 use Whoops\Exception\Formatter;
 class JsonResponseHandler extends Handler
 {

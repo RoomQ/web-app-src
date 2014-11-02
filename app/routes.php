@@ -11,29 +11,35 @@
 |
 */
 
-
-
 Route::get('/', function()
 {
 	return View::make('hello');
 });
 
-Route::get('test', function()
+
+/*Route::get('/', function()
 {
-	$name='Kyriakos Too!';
-    return View::make('test')->with('my_name',$name);
+    return "Welcome Home";
 });
-
-Route::get('users2', function()
+*/
+Route::get('login', function()
 {
-    return View::make('users');
+    return View::make('loginForm');
 });
 
-Route::get('usersCtrl', 'PagesController@home');
-Route::get('about', 'PagesController@about');
-Route::get('db', function(){
-	$users = DB::table('users')->where('username','!=','JeffreyWay')->get();
-	$user = DB::table('users')->find(1);
-
-	return $users;
+Route::get('admin', function()
+{
+    return View::make('adminPage');
 });
+
+// route to show the login form
+Route::get('login', array('uses' => 'LoginController@showLogin'));
+
+// route to process the form
+Route::post('login', array('uses' => 'LoginController@doLogin'));
+
+// route for logging out
+Route::get('logout', array('uses' => 'HomeController@doLogout'));
+
+// route to show the registration form
+Route::get('register', array('uses' => 'HomeController@showRegister'));

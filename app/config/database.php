@@ -55,7 +55,7 @@ return array(
 		'mysql' => array(
 			'driver'    => 'mysql',
 			'host'      => 'localhost',
-			'database'  => 'laravel_learning',
+			'database'  => 'roomq',
 			'username'  => 'root',
 			'password'  => '777777',
 			'charset'   => 'utf8',
