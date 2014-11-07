@@ -1,9 +1,19 @@
 @extends('layouts.default')
-@section('content')
 
-	<div class="page-header">
-		<h1><span class="glyphicon glyphicon-flash"></span>Register</h1>
-	</div>
+@section('breadcrumb')
+	<li><a href="#">Home</a></li>
+    <li class="active">Register</li>
+@stop
+
+@section('title')
+	<title>RoomQ | Register</title>
+@stop
+
+@section('header')
+	<h1>Register</h1>
+@stop
+
+@section('content')
 
 	{{ Form::open(['route' => 'users.store']) }}
 		<div class="form-group">
@@ -24,8 +34,8 @@
 			{{ $errors->first('password_confirmation','<span class=error>:message</span>') }}
 		</div>
 
-		<div>
-			{{ Form::submit('Register',['class' => 'btn btn-success']) }}
+		<div class="form-group clearfix">
+			{{ Form::submit('Register',['class' => 'btn pull-right btn-default']) }}
 		</div>
 
 	{{ Form::close() }}

@@ -1,7 +1,19 @@
 @extends('layouts.default')
-@section('content')
 
+@section('breadcrumb')
+	<li><a href="#">Home</a></li>
+    <li class="active">Login</li>
+@stop
+
+@section('title')
+	<title>RoomQ | Login</title>
+@stop
+
+@section('header')
 	<h1>Login</h1>
+@stop
+
+@section('content')
 
 	{{ Form::open(['route' => 'sessions.store']) }}
 		<div class="form-group">
@@ -16,9 +28,12 @@
 			{{ $errors->first('password','<span class=error>:message</span>') }}
 		</div>
 
-		<div>
-			{{ Form::submit('Log In',['class' => 'btn btn-success']) }}
+		<div class="form-group clearfix">
+			{{ Form::submit('Log In',['class' => 'btn pull-right btn-default']) }}
 		</div>
+
+		<hr/>
+        <div class="center"><a href="#">I don't remember my password</a></div>
 
 	{{ Form::close() }}
 

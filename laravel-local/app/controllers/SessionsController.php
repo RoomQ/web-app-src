@@ -15,7 +15,7 @@ class SessionsController extends \BaseController {
 	 */
 	public function index()
 	{
-	
+		return View::make('sessions.index',['message' => $message]);
 	}
 
 
@@ -44,7 +44,7 @@ class SessionsController extends \BaseController {
 
 		// attempt to do the login
 		if ( Auth::attempt($input) ){
-			return 'Welcome ' . Auth::user()->email;
+			return View::make('sessions.index')->withMessage('Welcome ' . Auth::user()->email);
 		}
 		return Redirect::back()->withInput();
 	}

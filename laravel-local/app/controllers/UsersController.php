@@ -41,7 +41,7 @@ class UsersController extends \BaseController {
 		$input = Input::all();
 		
 
-		if (! $this->user->fill($input)->isValid() ) {
+		if (! $this->user->fill($input)->isValid(get_class($this)) ) {
 			return Redirect::back()->withInput()->withErrors($this->user->errors);
 		}
 		
