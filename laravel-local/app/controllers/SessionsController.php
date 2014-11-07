@@ -2,6 +2,12 @@
 
 class SessionsController extends \BaseController {
 
+	protected $user;
+
+	public function __construct(User $user){
+		$this->user = $user;
+	}
+
 	/**
 	 * Display a listing of the resource.
 	 *
@@ -30,8 +36,14 @@ class SessionsController extends \BaseController {
 
 	public function store()
 	{
+		$input = Input::only('email','password');
+
+		if (! $this->user->fill($input)->isValid(get_class($this)) ) {
+			return Redirect::back()->withInput()->withErrors($this->user->errors);
+		}
+
 		// attempt to do the login
-		if ( Auth::attempt(Input::only('email','password')) ){
+		if ( Auth::attempt($input) ){
 			return 'Welcome ' . Auth::user()->email;
 		}
 		return Redirect::back()->withInput();

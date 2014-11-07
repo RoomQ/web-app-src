@@ -18,14 +18,19 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 
 	public $timestamps = true;
 
-	protected $hidden = array('password_confirmation','remember_token');
+	protected $hidden = array('password','password_confirmation','remember_token');
 
 	protected $fillable = ['email','password','password_confirmation','role','is_host','is_admin','remember_token'];
 
-	public static $rules = [
+	public static $rules_register = [
 		'email' => 'required|email|unique:users',
 		'password' => 'required|alphaNum|min:3',
-		'password_confirmation' => 'sometimes|required|alphaNum|min:3|same:password'
+		'password_confirmation' => 'required|alphaNum|min:3|same:password'
+	];
+
+	public static $rules_login = [
+		'email' => 'required|email',
+		'password' => 'required|alphaNum|min:3'
 	];
 
 	public $errors;
@@ -35,8 +40,14 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	 *
 	 * @var array
 	 */
-	public function isValid(){
-		$validation = Validator::make($this->attributes	,static::$rules);
+	
+	public function isValid($caller_class){
+		$rules=static::$rules_register;
+		if($caller_class == 'SessionsController'){
+			$rules=static::$rules_login;
+		}
+		
+		$validation = Validator::make($this->attributes	,$rules);
 
 		if ($validation->passes()){
 			return true;
