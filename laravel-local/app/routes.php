@@ -13,7 +13,7 @@
 
 Route::get('/', function()
 {
-	return View::make('hello');
+	return View::make('index');
 });
 
 
@@ -24,6 +24,7 @@ Route::get('phpinfo', function()
 
 Route::resource('users', 'UsersController');
 Route::resource('sessions', 'SessionsController');
+Route::resource('rooms', 'RoomsController');
 
 Route::get('login', 'SessionsController@create');
 Route::get('register', 'UsersController@create');
