@@ -34,7 +34,7 @@
                 "dev-master": "2.5-dev"
             }
         },
-        "installation-source": "source",
+        "installation-source": "dist",
         "autoload": {
             "psr-0": {
                 "Symfony\\Component\\Translation\\": ""
@@ -98,7 +98,7 @@
                 "dev-master": "2.5-dev"
             }
         },
-        "installation-source": "source",
+        "installation-source": "dist",
         "autoload": {
             "psr-0": {
                 "Symfony\\Component\\Security\\Core\\": ""
@@ -161,7 +161,7 @@
                 "dev-master": "2.5-dev"
             }
         },
-        "installation-source": "source",
+        "installation-source": "dist",
         "autoload": {
             "psr-0": {
                 "Symfony\\Component\\Routing\\": ""
@@ -216,7 +216,7 @@
                 "dev-master": "2.5-dev"
             }
         },
-        "installation-source": "source",
+        "installation-source": "dist",
         "autoload": {
             "psr-0": {
                 "Symfony\\Component\\Process\\": ""
@@ -256,7 +256,7 @@
         },
         "time": "2012-12-21 11:40:51",
         "type": "library",
-        "installation-source": "source",
+        "installation-source": "dist",
         "autoload": {
             "psr-0": {
                 "Psr\\Log\\": ""
@@ -313,7 +313,7 @@
                 "dev-master": "2.5-dev"
             }
         },
-        "installation-source": "source",
+        "installation-source": "dist",
         "autoload": {
             "psr-0": {
                 "Symfony\\Component\\Debug\\": ""
@@ -365,7 +365,7 @@
                 "dev-master": "2.5-dev"
             }
         },
-        "installation-source": "source",
+        "installation-source": "dist",
         "autoload": {
             "psr-0": {
                 "Symfony\\Component\\HttpFoundation\\": ""
@@ -427,7 +427,7 @@
                 "dev-master": "2.5-dev"
             }
         },
-        "installation-source": "source",
+        "installation-source": "dist",
         "autoload": {
             "psr-0": {
                 "Symfony\\Component\\EventDispatcher\\": ""
@@ -501,7 +501,7 @@
                 "dev-master": "2.5-dev"
             }
         },
-        "installation-source": "source",
+        "installation-source": "dist",
         "autoload": {
             "psr-0": {
                 "Symfony\\Component\\HttpKernel\\": ""
@@ -550,7 +550,7 @@
                 "dev-master": "2.5-dev"
             }
         },
-        "installation-source": "source",
+        "installation-source": "dist",
         "autoload": {
             "psr-0": {
                 "Symfony\\Component\\Finder\\": ""
@@ -605,7 +605,7 @@
                 "dev-master": "2.5-dev"
             }
         },
-        "installation-source": "source",
+        "installation-source": "dist",
         "autoload": {
             "psr-0": {
                 "Symfony\\Component\\DomCrawler\\": ""
@@ -654,7 +654,7 @@
                 "dev-master": "2.5-dev"
             }
         },
-        "installation-source": "source",
+        "installation-source": "dist",
         "autoload": {
             "psr-0": {
                 "Symfony\\Component\\CssSelector\\": ""
@@ -715,7 +715,7 @@
                 "dev-master": "2.5-dev"
             }
         },
-        "installation-source": "source",
+        "installation-source": "dist",
         "autoload": {
             "psr-0": {
                 "Symfony\\Component\\Console\\": ""
@@ -772,7 +772,7 @@
                 "dev-master": "2.5-dev"
             }
         },
-        "installation-source": "source",
+        "installation-source": "dist",
         "autoload": {
             "psr-0": {
                 "Symfony\\Component\\BrowserKit\\": ""
@@ -823,7 +823,7 @@
                 "dev-master": "5.3-dev"
             }
         },
-        "installation-source": "source",
+        "installation-source": "dist",
         "autoload": {
             "files": [
                 "lib/swift_required.php"
@@ -879,7 +879,7 @@
                 "dev-master": "1.0-dev"
             }
         },
-        "installation-source": "source",
+        "installation-source": "dist",
         "autoload": {
             "psr-0": {
                 "Stack": "src"
@@ -928,7 +928,7 @@
         },
         "time": "2014-08-01 09:43:10",
         "type": "library",
-        "installation-source": "source",
+        "installation-source": "dist",
         "autoload": {
             "psr-0": {
                 "Predis": "lib/"
@@ -955,17 +955,17 @@
     },
     {
         "name": "phpseclib/phpseclib",
-        "version": "0.3.8",
-        "version_normalized": "0.3.8.0",
+        "version": "0.3.9",
+        "version_normalized": "0.3.9.0",
         "source": {
             "type": "git",
             "url": "https://github.com/phpseclib/phpseclib.git",
-            "reference": "5085202f1f37769aae59f9711c423f28159c9b29"
+            "reference": "c6e88ca6e81bc5a2d7161658e16a95b7ef8d6ad1"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/phpseclib/phpseclib/zipball/5085202f1f37769aae59f9711c423f28159c9b29",
-            "reference": "5085202f1f37769aae59f9711c423f28159c9b29",
+            "url": "https://api.github.com/repos/phpseclib/phpseclib/zipball/c6e88ca6e81bc5a2d7161658e16a95b7ef8d6ad1",
+            "reference": "c6e88ca6e81bc5a2d7161658e16a95b7ef8d6ad1",
             "shasum": ""
         },
         "require": {
@@ -982,14 +982,14 @@
             "ext-mcrypt": "Install the Mcrypt extension in order to speed up a wide variety of cryptographic operations.",
             "pear-pear/PHP_Compat": "Install PHP_Compat to get phpseclib working on PHP < 4.3.3."
         },
-        "time": "2014-09-13 02:42:45",
+        "time": "2014-11-10 03:08:59",
         "type": "library",
         "extra": {
             "branch-alias": {
                 "dev-master": "0.3-dev"
             }
         },
-        "installation-source": "source",
+        "installation-source": "dist",
         "autoload": {
             "psr-0": {
                 "Crypt": "phpseclib/",
@@ -1055,17 +1055,17 @@
     },
     {
         "name": "patchwork/utf8",
-        "version": "v1.1.25",
-        "version_normalized": "1.1.25.0",
+        "version": "v1.1.26",
+        "version_normalized": "1.1.26.0",
         "source": {
             "type": "git",
-            "url": "https://github.com/nicolas-grekas/Patchwork-UTF8.git",
-            "reference": "2d43bd047b120279511d45e76e61c5a9812d9a83"
+            "url": "https://github.com/tchwork/utf8.git",
+            "reference": "6b8e46603b49ee87ad6bceb314da94cc04ffcdce"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/nicolas-grekas/Patchwork-UTF8/zipball/2d43bd047b120279511d45e76e61c5a9812d9a83",
-            "reference": "2d43bd047b120279511d45e76e61c5a9812d9a83",
+            "url": "https://api.github.com/repos/tchwork/utf8/zipball/6b8e46603b49ee87ad6bceb314da94cc04ffcdce",
+            "reference": "6b8e46603b49ee87ad6bceb314da94cc04ffcdce",
             "shasum": ""
         },
         "require": {
@@ -1077,14 +1077,14 @@
             "ext-intl": "Use Intl for best performance",
             "ext-mbstring": "Use Mbstring for best performance"
         },
-        "time": "2014-08-05 08:00:32",
+        "time": "2014-11-08 10:13:25",
         "type": "library",
         "extra": {
             "branch-alias": {
                 "dev-master": "1.1-dev"
             }
         },
-        "installation-source": "source",
+        "installation-source": "dist",
         "autoload": {
             "psr-0": {
                 "Patchwork": "class/",
@@ -1098,13 +1098,13 @@
         "authors": [
             {
                 "name": "Nicolas Grekas",
-                "email": "p@tchwork.com",
-                "role": "Developer"
+                "email": "p@tchwork.com"
             }
         ],
-        "description": "Extensive, portable and performant handling of UTF-8 and grapheme clusters for PHP",
-        "homepage": "https://github.com/nicolas-grekas/Patchwork-UTF8",
+        "description": "Portable and performant UTF-8, Unicode and Grapheme Clusters for PHP",
+        "homepage": "https://github.com/tchwork/utf8",
         "keywords": [
+            "grapheme",
             "i18n",
             "unicode",
             "utf-8",
@@ -1134,7 +1134,7 @@
         },
         "time": "2014-09-26 02:52:02",
         "type": "library",
-        "installation-source": "source",
+        "installation-source": "dist",
         "autoload": {
             "psr-0": {
                 "Carbon": "src"
@@ -1208,7 +1208,7 @@
                 "dev-master": "1.11.x-dev"
             }
         },
-        "installation-source": "source",
+        "installation-source": "dist",
         "autoload": {
             "psr-4": {
                 "Monolog\\": "src/Monolog"
@@ -1259,7 +1259,7 @@
                 "dev-master": "0.9-dev"
             }
         },
-        "installation-source": "source",
+        "installation-source": "dist",
         "autoload": {
             "psr-0": {
                 "PHPParser": "lib/"
@@ -1304,7 +1304,7 @@
         },
         "time": "2013-10-09 04:20:00",
         "type": "library",
-        "installation-source": "source",
+        "installation-source": "dist",
         "autoload": {
             "psr-0": {
                 "Jeremeamia\\SuperClosure": "src/"
@@ -1358,7 +1358,7 @@
                 "dev-master": "1.2-dev"
             }
         },
-        "installation-source": "source",
+        "installation-source": "dist",
         "autoload": {
             "psr-0": {
                 "Whoops": "src/"
@@ -1407,7 +1407,7 @@
         },
         "time": "2013-04-30 19:58:08",
         "type": "library",
-        "installation-source": "source",
+        "installation-source": "dist",
         "autoload": {
             "files": [
                 "lib/password.php"
@@ -1459,7 +1459,7 @@
             "bin/boris"
         ],
         "type": "library",
-        "installation-source": "source",
+        "installation-source": "dist",
         "autoload": {
             "psr-0": {
                 "Boris": "lib"
@@ -1493,7 +1493,7 @@
                 "dev-master": "2.5-dev"
             }
         },
-        "installation-source": "source",
+        "installation-source": "dist",
         "autoload": {
             "psr-0": {
                 "Symfony\\Component\\Filesystem\\": ""
@@ -1548,7 +1548,7 @@
                 "dev-master": "1.0-dev"
             }
         },
-        "installation-source": "source",
+        "installation-source": "dist",
         "autoload": {
             "psr-0": {
                 "ClassPreloader": "src/"
@@ -1654,7 +1654,7 @@
                 "dev-master": "4.2-dev"
             }
         },
-        "installation-source": "source",
+        "installation-source": "dist",
         "autoload": {
             "classmap": [
                 "src/Illuminate/Queue/IlluminateQueueClosure.php"
